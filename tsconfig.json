@@ -19,7 +19,9 @@
       }
     ],
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "@dbConfig/*": ["./src/dbConfig/*"],
+      "@models/*": ["./src/models/*"]
     }
   },
   "include": [
