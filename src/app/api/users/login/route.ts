@@ -32,7 +32,9 @@ export async function POST(request: NextRequest) {
             email: user.email
         }
         //create token
-        const token = jwt.sign(tokenData, process.env.JWT_SECRET!, {expiresIn: "1d"});
+        // const token = jwt.sign(tokenData, process.env.JWT_SECRET!, {expiresIn: "1d"});
+
+        const token = await jwt.sign(tokenData, process.env.TOKEN_SECRET!, { expiresIn: "1d" });
 
         const response = NextResponse.json({
             message: "Login successful",
@@ -44,6 +46,7 @@ export async function POST(request: NextRequest) {
         return response;
         
     } catch (error: any) {
+        console.log("THE ACTUAL ERROR IS:", error.message); // This will show in your VS Code terminal
         return NextResponse.json({error: error.message}, {status: 500});
     }
 }
