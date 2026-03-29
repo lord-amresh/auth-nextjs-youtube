@@ -9,9 +9,10 @@ connect();
 
 export async function GET(request: NextRequest) {
     try {
-        getDataFromToken(request);
+        const userId = await getDataFromToken(request);
+        const user = await User.findOne({ _id: userId })
     } catch (error:any) {
-        return NextResponse.json({ error: error.message }, { status: 500 });
+        return NextResponse.json({ error: error.message }, { status: 400 });
         
     }
 }
