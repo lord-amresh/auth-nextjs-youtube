@@ -1,8 +1,10 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  staticPageGenerationTimeout: 120,
+  experimental: {
+  }
   /* config options here */
-  reactCompiler: true,
 };
 
 export default nextConfig;
