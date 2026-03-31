@@ -1,6 +1,7 @@
 "use client";
 
 import axios from "axios";
+import Link from "next/link";
 import link from "next/link";
 import React, { useEffect, useState } from "react";
 
@@ -12,7 +13,7 @@ export default function VerifyEmailpage() {
 
     const verifyuserEmail = async () => {
         try {
-            await axios.post("/api/verifyemail", { token });
+            await axios.post("/api/users/verifyemail", { token });
             setVerified(true);
         } catch (error:any) {
             setError("true");
@@ -23,7 +24,9 @@ export default function VerifyEmailpage() {
 
     useEffect(() => {
         const urlToken = window.location.search.split("=")[1];
-        setToken(urlToken);
+        // Use decodeURIComponent to clean up any $ or % characters
+        setToken(decodeURIComponent(urlToken) || "");
+        setToken(urlToken || "");
     }, []);
 
     useEffect(() => { 
@@ -41,9 +44,9 @@ export default function VerifyEmailpage() {
             {verified && (
                 <div >
                     <h2 className="text-2xl font-bold mb-4">Email Verified Successfully!</h2>
-                    <link href="/login">
+                    <Link href="/login">
                     Login                
-                    </link>
+                    </Link>
                 </div>
             )}
 
