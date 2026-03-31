@@ -50,3 +50,26 @@ TOKEN_SECRET=your_jwt_secret_key
 DOMAIN=http://localhost:3000
 MAILTRAP_USER=your_mailtrap_username
 MAILTRAP_PASS=your_mailtrap_password
+
+🏗️ Getting Started
+Clone the repository:
+
+Bash
+git clone [https://github.com/yourusername/auth-nextjs-youtube.git](https://github.com/yourusername/auth-nextjs-youtube.git)
+Install dependencies:
+
+Bash
+npm install --legacy-peer-deps
+Run the development server:
+
+Bash
+npm run dev
+🛡️ Lessons Learned
+Handling Peer Dependencies: Managed version conflicts between Vite 8 and Tailwind v4 using legacy flags.
+
+URL Safety: Implemented URL-safe tokens (Hex/Base36) to prevent special character breakage in email links.
+
+Error Handling: Refined React state logic to handle 400/500 errors gracefully and prevent UI flickering.
+
+👨‍💻 Connect with Me
+Amresh Chaurasia BCA Graduate | MERN Stack Developer LinkedIn | Portfolio
