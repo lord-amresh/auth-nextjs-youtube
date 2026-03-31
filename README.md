@@ -40,7 +40,18 @@ A robust, production-ready authentication system built with **Next.js 16**, **Mo
 4.  **Access:** User visits protected `/profile` page → Middleware/Route Handler validates the cookie.
 
 ---
+---
+##🛡️ Lessons Learned
+Handling Peer Dependencies: Managed version conflicts between Vite 8 and Tailwind v4 using legacy flags.
 
+URL Safety: Implemented URL-safe tokens (Hex/Base36) to prevent special character breakage in email links.
+
+Error Handling: Refined React state logic to handle 400/500 errors gracefully and prevent UI flickering.
+---
+##👨‍💻 Connect with Me
+Amresh Chaurasia BCA Graduate | MERN Stack Developer LinkedIn | Portfolio
+
+---
 ## ⚙️ Environment Variables
 To run this project, you will need to add the following environment variables to your `.env` file:
 
@@ -64,13 +75,3 @@ Run the development server:
 
 Bash
 npm run dev
----
-##🛡️ Lessons Learned
-Handling Peer Dependencies: Managed version conflicts between Vite 8 and Tailwind v4 using legacy flags.
-
-URL Safety: Implemented URL-safe tokens (Hex/Base36) to prevent special character breakage in email links.
-
-Error Handling: Refined React state logic to handle 400/500 errors gracefully and prevent UI flickering.
----
-##👨‍💻 Connect with Me
-Amresh Chaurasia BCA Graduate | MERN Stack Developer LinkedIn | Portfolio
