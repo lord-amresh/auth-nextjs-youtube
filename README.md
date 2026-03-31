@@ -1,36 +1,52 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🔐 Full-Stack Next.js 16 Authentication System
 
-## Getting Started
+A robust, production-ready authentication system built with **Next.js 16**, **MongoDB**, and **TypeScript**. This project implements a secure "User-First" workflow including Email Verification and JWT-based session management.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🚀 Key Highlights for Recruiters
+* **Modern Tech Stack:** Built using **Next.js 16 (Turbopack)** and **Tailwind CSS v4**, utilizing the latest features in the React ecosystem.
+* **Secure Backend:** Implements **Bcrypt.js** for password hashing and **JSON Web Tokens (JWT)** for stateless session management.
+* **Database Integration:** Seamlessly integrated with **MongoDB Atlas** using **Mongoose** for schema-based data modeling.
+* **Email Workflow:** Automated email verification system using **Nodemailer** and **Mailtrap** for safe testing.
+* **Clean Architecture:** Configured TypeScript path mapping (`@models/*`, `@dbConfig/*`) for professional code organization.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🛠️ Tech Stack
+* **Framework:** Next.js 16 (App Router)
+* **Language:** TypeScript
+* **Styling:** Tailwind CSS v4
+* **Database:** MongoDB Atlas (Mongoose ORM)
+* **Authentication:** JWT (JSON Web Tokens) & Bcrypt.js
+* **Emailing:** Nodemailer & Mailtrap
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## ✨ Features
+* **User Registration:** Sign up with unique usernames and email validation.
+* **Email Verification:** Prevents bot sign-ups by requiring users to verify their email via a URL-safe unique token.
+* **Secure Login:** Credential-based login with encrypted password comparison.
+* **Protected Routes:** Profile and Dashboard access restricted to authenticated users only.
+* **Token-based Sessions:** Uses HTTP-only cookies to store JWTs, mitigating XSS attacks.
+* **Logout:** Securely clears server-side cookies to end user sessions.
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📸 Project Workflow
+1.  **Signup:** User submits details → Password is hashed → User is saved as "unverified" → Verification email is sent.
+2.  **Verify:** User clicks unique link → Token is validated against MongoDB → User status updated to "verified."
+3.  **Login:** User enters credentials → JWT is generated → Token is stored in an HTTP-only cookie.
+4.  **Access:** User visits protected `/profile` page → Middleware/Route Handler validates the cookie.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## ⚙️ Environment Variables
+To run this project, you will need to add the following environment variables to your `.env` file:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```text
+MONGO_URI=your_mongodb_connection_string
+TOKEN_SECRET=your_jwt_secret_key
+DOMAIN=http://localhost:3000
+MAILTRAP_USER=your_mailtrap_username
+MAILTRAP_PASS=your_mailtrap_password
