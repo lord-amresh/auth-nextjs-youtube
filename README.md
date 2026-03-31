@@ -45,6 +45,15 @@ A robust, production-ready authentication system built with **Next.js 16**, **Mo
 Amresh Chaurasia BCA Graduate | MERN Stack Developer with React Native App Development Skills 
  LinkedIn | Portfolio
 
+---
+## 🛡️ Lessons Learned
+Handling Peer Dependencies: Managed version conflicts between Vite 8 and Tailwind v4 using legacy flags.
+
+URL Safety: Implemented URL-safe tokens (Hex/Base36) to prevent special character breakage in email links.
+
+Error Handling: Refined React state logic to handle 400/500 errors gracefully and prevent UI flickering.
+
+---
 ## ⚙️ Environment Variables
 To run this project, you will need to add the following environment variables to your `.env` file:
 
@@ -68,10 +77,4 @@ Run the development server:
 
 Bash
 npm run dev
----
-##🛡️ Lessons Learned
-Handling Peer Dependencies: Managed version conflicts between Vite 8 and Tailwind v4 using legacy flags.
 
-URL Safety: Implemented URL-safe tokens (Hex/Base36) to prevent special character breakage in email links.
-
-Error Handling: Refined React state logic to handle 400/500 errors gracefully and prevent UI flickering.
